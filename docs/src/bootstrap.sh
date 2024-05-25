@@ -38,7 +38,7 @@ disabled = false
 " > ~/.config/starship.toml
 
 # elvish
-mkdir --parents ~/.config
+mkdir --parents ~/.config/elvish
 echo "\
 set paths = [ ~/.local/bin ~/go/bin \$@paths ]
 
