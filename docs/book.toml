@@ -1,0 +1,21 @@
+[book]
+authors = ["rsteube"]
+language = "en"
+multilingual = false
+src = "src"
+title = "demo"
+
+[output.html]
+default-theme = "Latte"
+preferred-dark-theme = "Mocha"
+additional-css = ["asciinema/asciinema-player.css", "./theme/catppuccin.css"]
+additional-js = ["asciinema/asciinema-player.min.js", "asciinema/load.js"]
+git-repository-url = "https://github.com/carapace-sh/demo"
+edit-url-template = "https://github.com/carapace-sh/demo/edit/master/docs/{path}"
+
+[output.html.fold]
+enable = true
+
+[output.linkcheck]
+follow-web-links = true
+exclude = [ ]
