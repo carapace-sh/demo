@@ -12,6 +12,7 @@ pkg install -y bat \
                gopls \
                gum \
                helix \
+               helix-grammars \
                neovim \
                htop \
                kakoune \
