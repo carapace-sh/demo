@@ -42,7 +42,6 @@ mkdir --parents ~/.config/elvish
 echo "\
 set paths = [ ~/.local/bin ~/go/bin \$@paths ]
 
-
 set-env CARAPACE_MATCH 1
 set edit:completion:matcher[argument] = {|seed| edit:match-prefix \$seed &ignore-case=\$true }
 
