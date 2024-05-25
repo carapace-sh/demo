@@ -12,7 +12,9 @@ pkg install -y bat \
                gopls \
                gum \
                helix \
+               neovim \
                htop \
+               kakoune \
                python \
                ripgrep \
                starship \
