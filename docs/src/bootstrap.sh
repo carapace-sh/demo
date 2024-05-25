@@ -10,6 +10,7 @@ pkg install -y bat \
                gh \
                golang \
                gopls \
+               gum \
                helix \
                htop \
                python \
@@ -23,3 +24,13 @@ pkg install -y bat \
 
 pip install httpie \
             xonsh
+
+
+# starship
+mkdir --parents ~/.config
+echo "\
+add_newline = false
+
+[shell]
+disabled = false
+" > ~/.config/starship.toml
