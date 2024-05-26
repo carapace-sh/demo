@@ -33,7 +33,7 @@ pip install httpie \
 # carapace
 mkdir --parents ~/go/bin
 [ -e ~/go/bin/carapace ] || curl -L "https://github.com/carapace-sh/termux/releases/download/v1.0.2/carapace_$(uname -m).tar.gz" | tar -xvz -C ~/go/bin 
-
+chmod +x ~/go/bin/carapace
 
 # starship
 mkdir --parents ~/.config
