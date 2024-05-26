@@ -75,6 +75,17 @@ set edit:completion:matcher[argument] = {|seed| edit:match-prefix \$seed &ignore
 eval (carapace _carapace elvish|slurp)
 " > ~/.config/elvish/rc.elv
 
+# fish
+mkdir --parents ~/.config/fish
+echo "\
+set SHELL fish
+set STARSHIP_SHELL fish
+
+starship init fish | source
+
+carapace --list | awk '{print \$1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish
+carapace _carapace fish | source
+" > ~/.config/fish/config.fish
 
 # xonsh
 mkdir --parents ~/.config/xonsh
