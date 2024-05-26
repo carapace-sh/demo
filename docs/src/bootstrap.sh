@@ -87,6 +87,7 @@ set STARSHIP_SHELL fish
 
 starship init fish | source
 
+mkdir --parents ~/.config/fish/completions
 carapace --list | awk '{print \$1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish
 carapace _carapace fish | source
 " > ~/.config/fish/config.fish
