@@ -2,7 +2,8 @@
 
 yes | pkg update
 
-yes | pkg install bat \
+yes | pkg install age \
+                  bat \
                   elvish \
                   eza \
                   fish \
