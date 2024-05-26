@@ -231,3 +231,6 @@ echo "\
 name: ls
 run: \"[eza]\"
 " > ~/.config/carapace/specs/ls.yaml
+
+# playground folder
+mkdir --parents ~/playground
