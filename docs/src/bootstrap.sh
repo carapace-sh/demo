@@ -38,25 +38,38 @@ add_newline = false
 disabled = false
 " > ~/.config/starship.toml
 
+# bash
+echo "\
+export EDITOR=hx
+export SHELL=bash
+export STARSHIP_SHELL=bash
+
+export PATH=\"~/.local/bin:~/go/bin:\$PATH\"
+
+eval \"\$(starship init bash)\"
+
+export CARAPACE_MATCH=1
+export CARAPACE_BRIDGES='bash,zsh,fish'
+source <(carapace _carapace bash)
+" > ~/.bashrc
+
 # elvish
 mkdir --parents ~/.config/elvish
 echo "\
-set paths = [ ~/.local/bin ~/go/bin \$@paths ]
-
-set-env CARAPACE_MATCH 1
-set edit:completion:matcher[argument] = {|seed| edit:match-prefix \$seed &ignore-case=\$true }
-
-set-env CARAPACE_BRIDGES zsh,fish,bash
-eval (carapace _carapace|slurp)
-
-unset-env STARSHIP_SHELL
+set-env EDITOR hx
 set-env STARSHIP_SHELL elvish
 set-env SHELL elvish
-set-env EDITOR hx
-set edit:prompt = { starship prompt }
-set E:LS_COLORS = (vivid generate dracula)
 
+set paths = [ ~/.local/bin ~/go/bin \$@paths ]
+
+set E:LS_COLORS = (vivid generate dracula)
+set edit:prompt = { starship prompt }
 set edit:rprompt = { echo '' }
+
+set edit:completion:matcher[argument] = {|seed| edit:match-prefix \$seed &ignore-case=\$true }
+set-env CARAPACE_MATCH 1
+set-env CARAPACE_BRIDGES zsh,fish,bash
+eval (carapace _carapace elvish|slurp)
 " > ~/.config/elvish/rc.elv
 
 # helix
