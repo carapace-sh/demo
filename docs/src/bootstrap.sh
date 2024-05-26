@@ -47,7 +47,6 @@ export PATH=\"~/.local/bin:~/go/bin:\$PATH\"
 
 export CARAPACE_BRIDGES='bash,zsh,fish'
 export CARAPACE_MATCH=1
-
 " > ~/.profile
 
 # bash
@@ -80,12 +79,12 @@ echo "\
 $STARSHIP_SHELL='xonsh'
 $SHELL='xonsh'
 
-$PROMPT=lambda: $(starship prompt)
+$PROMPT=lambda: \$(starship prompt)
 $COMPLETIONS_CONFIRM=True
 $COMPLETION_QUERY_LIMIT=500
 del aliases['ls']
 
-exec($(carapace _carapace xonsh))
+exec(\$(carapace _carapace xonsh))
 " > ~/.config/xonsh/rc.xsh
 
 # zsh
@@ -168,7 +167,7 @@ mouse = false
 " > ~/.config/helix/config.toml
 
 
-# specs
+# example specs
 mkdir --parents ~/.config/carapace/specs
 echo "\
 # yaml-language-server: \$schema=https://carapace.sh/schemas/command.json
