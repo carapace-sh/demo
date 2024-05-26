@@ -39,36 +39,38 @@ add_newline = false
 disabled = false
 " > ~/.config/starship.toml
 
-# bash
+# .profile
 echo "\
 export EDITOR=hx
 export LS_COLORS=\"\$(vivid generate dracula)\"
 export PATH=\"/data/data/com.termux/files/home/.local/bin:/data/data/com.termux/files/home/go/bin:\$PATH\"
+
+export CARAPACE_MATCH=1
+export CARAPACE_BRIDGES='bash,zsh,fish'
+" > ~/.profile
+
+# bash
+echo "\
+source ~/.profile
+
 export SHELL=bash
 export STARSHIP_SHELL=bash
 
 eval \"\$(starship init bash)\"
 
-export CARAPACE_MATCH=1
-export CARAPACE_BRIDGES='bash,zsh,fish'
 source <(carapace _carapace bash)
 " > ~/.bashrc
 
 # elvish
 mkdir --parents ~/.config/elvish
 echo "\
-set-env EDITOR hx
-set-env LS_COLORS (vivid generate dracula)
 set-env SHELL elvish
 set-env STARSHIP_SHELL elvish
-set paths = [ ~/.local/bin ~/go/bin \$@paths ]
 
 set edit:prompt = { starship prompt }
 set edit:rprompt = { echo '' }
 
 set edit:completion:matcher[argument] = {|seed| edit:match-prefix \$seed &ignore-case=\$true }
-set-env CARAPACE_MATCH 1
-set-env CARAPACE_BRIDGES zsh,fish,bash
 eval (carapace _carapace elvish|slurp)
 " > ~/.config/elvish/rc.elv
 
@@ -76,8 +78,6 @@ eval (carapace _carapace elvish|slurp)
 # xonsh
 mkdir --parents ~/.config/xonsh
 echo "\
-$EDITOR='hx'
-
 $SHELL='xonsh'
 $STARSHIP_SHELL='xonsh'
 
@@ -86,17 +86,12 @@ $COMPLETIONS_CONFIRM=True
 $COMPLETION_QUERY_LIMIT=500
 del aliases['ls']
 
-$CARAPACE_MATCH='1'
-$CARAPACE_BRIDGES='zsh,fish,bash'
 exec(\$(carapace _carapace xonsh))
 " > ~/.config/xonsh/rc.xsh
 
 # zsh
 # shellcheck disable=SC2028
 echo "\
-export EDITOR=hx
-export LS_COLORS = \"\$(vivid generate dracula)\"
-export PATH=\"~/.local/bin:~/go/bin:\$PATH\"
 export SHELL=zsh
 export STARSHIP_SHELL=zsh
 
@@ -107,8 +102,6 @@ zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'exter
 
 eval \"\$(starship init zsh)\"
 
-export CARAPACE_MATCH=1
-export CARAPACE_BRIDGES='bash,zsh,fish'
 source <(carapace _carapace zsh)
 " > ~/.zshrc
 
