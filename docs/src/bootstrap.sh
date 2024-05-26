@@ -73,7 +73,6 @@ eval (carapace _carapace elvish|slurp)
 " > ~/.config/elvish/rc.elv
 
 # zsh
-mkdir --parents ~/.config/zsh
 # shellcheck disable=SC2028
 echo "\
 export EDITOR=hx
@@ -92,7 +91,7 @@ eval \"\$(starship init zsh)\"
 export CARAPACE_MATCH=1
 export CARAPACE_BRIDGES='bash,zsh,fish'
 source <(carapace _carapace zsh)
-" > ~/.config/zsh/.zshrc
+" > ~/.zshrc
 
 # helix
 mkdir --parents ~/.config/helix
