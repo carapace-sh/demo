@@ -164,4 +164,4 @@ echo "\
 # yaml-language-server: \$schema=https://carapace.sh/schemas/command.json
 name: ls
 run: \"[eza]\"
-" > ~/.config/carapace/specs
+" > ~/.config/carapace/specs/ls.yaml
