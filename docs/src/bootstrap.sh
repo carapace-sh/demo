@@ -72,6 +72,27 @@ set-env CARAPACE_BRIDGES zsh,fish,bash
 eval (carapace _carapace elvish|slurp)
 " > ~/.config/elvish/rc.elv
 
+# zsh
+mkdir --parents ~/.config/zsh
+echo "\
+export EDITOR=hx
+export SHELL=zsh
+export STARSHIP_SHELL=zsh
+
+export PATH=\"~/.local/bin:~/go/bin:\$PATH\"
+
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' format \$'\e[2;37mCompleting %d\e[m'
+zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
+
+eval \"\$(starship init zsh)\"
+
+export CARAPACE_MATCH=1
+export CARAPACE_BRIDGES='bash,zsh,fish'
+source <(carapace _carapace zsh)
+" > ~/.config/zsh/.zshrc
+
 # helix
 mkdir --parents ~/.config/helix
 echo "\
