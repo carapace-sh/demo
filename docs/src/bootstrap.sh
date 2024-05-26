@@ -3,6 +3,7 @@
 yes | pkg update
 
 yes | pkg install bat \
+                  delta \
                   elvish \
                   eza \
                   fish \
@@ -197,6 +198,28 @@ mouse = false
 \"y\" = \":clipboard-yank-join\" # Join and yank selections to clipboard
 " > ~/.config/helix/config.toml
 
+# .gitconfig
+echo "\
+[user]
+	email = demo@localhost
+	name = demo
+		
+[core]
+    pager = delta --syntax-theme Catppuccin-mocha
+
+[interactive]
+    diffFilter = delta --color-only --syntax-theme Catppuccin-mocha
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+" > ~/.gitconfig
 
 # example specs
 mkdir --parents ~/.config/carapace/specs
