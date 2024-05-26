@@ -1,30 +1,30 @@
 #!/bin/sh
 
-yes | pkg update -y
+yes | pkg update
 
-yes | pkg install -y bat \
-               elvish \
-               eza \
-               fish \
-               git \
-               gh \
-               golang \
-               gopls \
-               gum \
-               helix \
-               helix-grammars \
-               neovim \
-               htop \
-               kakoune \
-               nushell \
-               python \
-               ripgrep \
-               starship \
-               tig \
-               vivid \
-               which \
-               wget \
-               zsh
+yes | pkg install bat \
+                  elvish \
+                  eza \
+                  fish \
+                  git \
+                  gh \
+                  golang \
+                  gopls \
+                  gum \
+                  helix \
+                  helix-grammars \
+                  neovim \
+                  htop \
+                  kakoune \
+                  nushell \
+                  python \
+                  ripgrep \
+                  starship \
+                  tig \
+                  vivid \
+                  which \
+                  wget \
+                  zsh
 
 pip install httpie \
             xonsh
@@ -82,7 +82,7 @@ $SHELL='xonsh'
 $STARSHIP_SHELL='xonsh'
 
 $PROMPT=lambda: \$(starship prompt)
-$COMPLETIONS_CONFIRM=True
+$COMPLETIONS_CONFIRM='True'
 $COMPLETION_QUERY_LIMIT=500
 del aliases['ls']
 
