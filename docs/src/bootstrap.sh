@@ -78,12 +78,12 @@ eval (carapace _carapace elvish|slurp)
 # xonsh
 mkdir --parents ~/.config/xonsh
 echo "\
-$SHELL='xonsh'
-$STARSHIP_SHELL='xonsh'
+\$SHELL='xonsh'
+\$STARSHIP_SHELL='xonsh'
 
-$PROMPT=lambda: \$(starship prompt)
-$COMPLETIONS_CONFIRM='True'
-$COMPLETION_QUERY_LIMIT=500
+\$PROMPT=lambda: \$(starship prompt)
+\$COMPLETIONS_CONFIRM=True
+\$COMPLETION_QUERY_LIMIT=500
 del aliases['ls']
 
 exec(\$(carapace _carapace xonsh))
