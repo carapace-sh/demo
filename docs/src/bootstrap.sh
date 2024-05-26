@@ -42,10 +42,10 @@ disabled = false
 # bash
 echo "\
 export EDITOR=hx
+export LS_COLORS = \"\$(vivid generate dracula)\"
+export PATH=\"~/.local/bin:~/go/bin:\$PATH\"
 export SHELL=bash
 export STARSHIP_SHELL=bash
-
-export PATH=\"~/.local/bin:~/go/bin:\$PATH\"
 
 eval \"\$(starship init bash)\"
 
@@ -58,12 +58,11 @@ source <(carapace _carapace bash)
 mkdir --parents ~/.config/elvish
 echo "\
 set-env EDITOR hx
-set-env STARSHIP_SHELL elvish
+set-env LS_COLORS = (vivid generate dracula)
 set-env SHELL elvish
-
+set-env STARSHIP_SHELL elvish
 set paths = [ ~/.local/bin ~/go/bin \$@paths ]
 
-set E:LS_COLORS = (vivid generate dracula)
 set edit:prompt = { starship prompt }
 set edit:rprompt = { echo '' }
 
@@ -77,14 +76,18 @@ eval (carapace _carapace elvish|slurp)
 # xonsh
 mkdir --parents ~/.config/xonsh
 echo "\
-$STARSHIP_SHELL='xonsh'
+$EDITOR='hx'
+
 $SHELL='xonsh'
+$STARSHIP_SHELL='xonsh'
 
 $PROMPT=lambda: \$(starship prompt)
 $COMPLETIONS_CONFIRM=True
 $COMPLETION_QUERY_LIMIT=500
 del aliases['ls']
 
+$CARAPACE_MATCH='1'
+$CARAPACE_BRIDGES='zsh,fish,bash'
 exec(\$(carapace _carapace xonsh))
 " > ~/.config/xonsh/rc.xsh
 
@@ -92,10 +95,10 @@ exec(\$(carapace _carapace xonsh))
 # shellcheck disable=SC2028
 echo "\
 export EDITOR=hx
+export LS_COLORS = \"\$(vivid generate dracula)\"
+export PATH=\"~/.local/bin:~/go/bin:\$PATH\"
 export SHELL=zsh
 export STARSHIP_SHELL=zsh
-
-export PATH=\"~/.local/bin:~/go/bin:\$PATH\"
 
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
