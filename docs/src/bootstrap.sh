@@ -39,36 +39,37 @@ add_newline = false
 disabled = false
 " > ~/.config/starship.toml
 
-# .profile
-echo "\
-export EDITOR=hx
-export LS_COLORS=\"\$(vivid generate dracula)\"
-export PATH=\"~/.local/bin:~/go/bin:\$PATH\"
-
-export CARAPACE_BRIDGES='bash,zsh,fish'
-export CARAPACE_MATCH=1
-" > ~/.profile
-
 # bash
 echo "\
+export EDITOR=hx
 export SHELL=bash
 export STARSHIP_SHELL=bash
 
+export PATH=\"~/.local/bin:~/go/bin:\$PATH\"
+
 eval \"\$(starship init bash)\"
 
+export CARAPACE_MATCH=1
+export CARAPACE_BRIDGES='bash,zsh,fish'
 source <(carapace _carapace bash)
 " > ~/.bashrc
 
 # elvish
 mkdir --parents ~/.config/elvish
 echo "\
+set-env EDITOR hx
 set-env STARSHIP_SHELL elvish
 set-env SHELL elvish
 
+set paths = [ ~/.local/bin ~/go/bin \$@paths ]
+
+set E:LS_COLORS = (vivid generate dracula)
 set edit:prompt = { starship prompt }
 set edit:rprompt = { echo '' }
 
 set edit:completion:matcher[argument] = {|seed| edit:match-prefix \$seed &ignore-case=\$true }
+set-env CARAPACE_MATCH 1
+set-env CARAPACE_BRIDGES zsh,fish,bash
 eval (carapace _carapace elvish|slurp)
 " > ~/.config/elvish/rc.elv
 
@@ -90,8 +91,11 @@ exec(\$(carapace _carapace xonsh))
 # zsh
 # shellcheck disable=SC2028
 echo "\
+export EDITOR=hx
 export SHELL=zsh
 export STARSHIP_SHELL=zsh
+
+export PATH=\"~/.local/bin:~/go/bin:\$PATH\"
 
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
@@ -100,6 +104,8 @@ zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'exter
 
 eval \"\$(starship init zsh)\"
 
+export CARAPACE_MATCH=1
+export CARAPACE_BRIDGES='bash,zsh,fish'
 source <(carapace _carapace zsh)
 " > ~/.zshrc
 
