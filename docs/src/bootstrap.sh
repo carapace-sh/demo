@@ -188,3 +188,6 @@ echo "\
 name: ls
 run: \"[eza]\"
 " > ~/.config/carapace/specs/ls.yaml
+
+#nushell
+yes | nu 2>/dev/null || true # force creating of config files
