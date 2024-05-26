@@ -49,7 +49,7 @@ disabled = false
 echo "\
 export EDITOR=hx
 export LS_COLORS=\"\$(vivid generate dracula)\"
-export PAGER=delta
+export PAGER=bat
 export PATH=\"/data/data/com.termux/files/home/.local/bin:/data/data/com.termux/files/home/go/bin:\$PATH\"
 
 export CARAPACE_MATCH=1
