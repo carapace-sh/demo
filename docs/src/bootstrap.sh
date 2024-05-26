@@ -3,17 +3,18 @@
 yes | pkg update
 
 yes | pkg install bat \
-                  delta \
                   elvish \
                   eza \
                   fish \
                   git \
+                  git-delta \
                   gh \
                   golang \
                   gopls \
                   gum \
                   helix \
                   helix-grammars \
+                  jq \
                   neovim \
                   htop \
                   kakoune \
