@@ -74,6 +74,7 @@ eval (carapace _carapace elvish|slurp)
 
 # zsh
 mkdir --parents ~/.config/zsh
+# shellcheck disable=SC2028
 echo "\
 export EDITOR=hx
 export SHELL=zsh
