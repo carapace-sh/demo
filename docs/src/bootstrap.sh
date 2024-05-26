@@ -27,6 +27,7 @@ yes | pkg install bat \
                   zsh
 
 pip install httpie \
+            prompt_toolkit \
             xonsh
 
 
