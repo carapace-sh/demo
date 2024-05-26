@@ -58,7 +58,7 @@ source <(carapace _carapace bash)
 mkdir --parents ~/.config/elvish
 echo "\
 set-env EDITOR hx
-set-env LS_COLORS = (vivid generate dracula)
+set-env LS_COLORS (vivid generate dracula)
 set-env SHELL elvish
 set-env STARSHIP_SHELL elvish
 set paths = [ ~/.local/bin ~/go/bin \$@paths ]
