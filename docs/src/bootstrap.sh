@@ -190,4 +190,13 @@ run: \"[eza]\"
 " > ~/.config/carapace/specs/ls.yaml
 
 #nushell
+rm --force --recursive ~/.config/nushell # clean slate
 yes | nu 2>/dev/null || true # force creating of config files
+starship init nu > ~/.config/nushell/starship.nu
+mkdir --parents ~/.cache/carapace
+echo "\
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+" >> ~/.config/nushell/env.nu
+echo "\
+source ~/.cache/carapace/init.nu
+" >> ~/.config/nushell/config.nu
