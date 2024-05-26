@@ -42,8 +42,8 @@ disabled = false
 # bash
 echo "\
 export EDITOR=hx
-export LS_COLORS = \"\$(vivid generate dracula)\"
-export PATH=\"~/.local/bin:~/go/bin:\$PATH\"
+export LS_COLORS=\"\$(vivid generate dracula)\"
+export PATH=\"/data/data/com.termux/files/home/.local/bin:/data/data/com.termux/files/home/go/bin:\$PATH\"
 export SHELL=bash
 export STARSHIP_SHELL=bash
 
