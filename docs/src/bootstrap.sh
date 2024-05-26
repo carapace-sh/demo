@@ -121,3 +121,12 @@ mouse = false
 [keys.select.space]
 \"y\" = \":clipboard-yank-join\" # Join and yank selections to clipboard
 " > ~/.config/helix/config.toml
+
+
+# specs
+mkdir --parents ~/.config/carapace/specs
+echo "\
+# yaml-language-server: \$schema=https://carapace.sh/schemas/command.json
+name: ls
+run: \"[eza]\"
+" > ~/.config/carapace/specs
