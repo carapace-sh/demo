@@ -1,8 +1,8 @@
 #!/bin/sh
 
-pkg update -y
+yes | pkg update -y
 
-pkg install -y bat \
+yes | pkg install -y bat \
                elvish \
                eza \
                fish \
