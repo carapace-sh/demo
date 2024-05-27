@@ -234,3 +234,11 @@ run: \"[eza]\"
 
 # playground folder
 mkdir --parents ~/playground
+
+# dummy executable
+mkdir --parents ~/.local/bin
+echo "\
+#!/bin/bash
+echo \"dummy command to demo environment variable completion\"
+" > ~/.local/bin/aws
+chmod +x ~/.local/bin/aws
