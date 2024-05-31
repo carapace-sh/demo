@@ -1,9 +1,15 @@
 #!/bin/sh
 
+mkdir --parents "$PREFIX/etc/apt/sources.list.d"
+echo "\
+deb [trusted=yes] https://termux.carapace.sh termux extras
+" > "$PREFIX/etc/apt/sources.list.d/carapace.list"
+
 yes | pkg update
 
 yes | pkg install age \
                   bat \
+                  carapace-bin \
                   elvish \
                   eza \
                   fish \
@@ -32,11 +38,6 @@ yes | pkg install age \
 pip install httpie \
             prompt_toolkit \
             xonsh
-
-# carapace
-mkdir --parents ~/go/bin
-[ -e ~/go/bin/carapace ] || curl -L "https://github.com/carapace-sh/termux/releases/download/v1.0.2/carapace_$(uname -m).tar.gz" | tar -xvz -C ~/go/bin 
-chmod +x ~/go/bin/carapace
 
 # starship
 mkdir --parents ~/.config
